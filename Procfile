@@ -1,1 +1,1 @@
-web: sudo node_modules/http-server/bin/http-server -p 80
+web: node index.js
