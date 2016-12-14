@@ -1,1 +1,1 @@
-web: http-server -p 80
+web: node_modules/http-server/bin/http-server -p 80
