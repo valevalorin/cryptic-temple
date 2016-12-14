@@ -3,8 +3,8 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-// app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/tracks'));
+app.use(express.static(__dirname + '/public'));
+app.use('/tracks', proxy('sc-redirect.herokuapp.com/callback.html'));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -14,7 +14,7 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/tracks', function(request, response) {
+app.get('/launch', function(request, response) {
   response.render('pages/redirect');
 });
 
